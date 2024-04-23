@@ -20,6 +20,7 @@ public class DiscountDB {
     private float personalDiscount(int customerId){
         return new Random(customerId).nextFloat(0.5f); 
     }
+    //This function would return a discount based on specific items
     private float itemDiscount(ArrayList<ItemDTO> items){
         float totalItemsPrice = 0;
         for (ItemDTO item : items){
@@ -31,6 +32,7 @@ public class DiscountDB {
     private boolean isItemDiscounted(ItemDTO item){
         return new Random().nextBoolean();
     }
+    //This function would return a discount based on the price
     private float totalPriceDiscount(float runningTotal){
         return new Random(Float.floatToIntBits(runningTotal)).nextFloat(0.5f);
     }
