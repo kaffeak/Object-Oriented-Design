@@ -10,12 +10,15 @@ public class DiscountDB {
     
 
     public float getDiscounts(int customerId, Sale currentSale){
-        
+        float totalAfterDiscounts = itemDiscount(currentSale.getItems());
+        totalAfterDiscounts = totalAfterDiscounts * personalDiscount(customerId);
+        totalAfterDiscounts = totalAfterDiscounts * totalPriceDiscount(currentSale.getRunningTotal());
+        return totalAfterDiscounts;
     }
 
     //This function would return a discount connected to the specific customer
     private float personalDiscount(int customerId){
-        return (float) (new Random(customerId).nextInt(1) / new Random().nextInt(20)); 
+        return new Random(customerId).nextFloat(0.5f); 
     }
     private float itemDiscount(ArrayList<ItemDTO> items){
         float totalItemsPrice = 0;
@@ -29,6 +32,6 @@ public class DiscountDB {
         return new Random().nextBoolean();
     }
     private float totalPriceDiscount(float runningTotal){
-
+        return new Random(Float.floatToIntBits(runningTotal)).nextFloat(0.5f);
     }
 }

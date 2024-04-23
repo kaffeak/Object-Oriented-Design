@@ -21,7 +21,7 @@ public class Sale {
     public void addToSale(ItemDTO item, int quantity){
         while (quantity-- > 0){
             this.items.add(item);
-            this.runningTotal += item.getPrice() + item.getPrice() * item.getVAT();
+            this.runningTotal += item.getPrice() * (item.getVAT()+1);
         }
     }
     public AddToSaleInfo getAddToSaleInfo(){
