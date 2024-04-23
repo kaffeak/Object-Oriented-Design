@@ -1,4 +1,5 @@
-import Integration.ItemDTO;
+package Integration;
+
 import java.util.List;
 
 public class ExternalInventorySystem {

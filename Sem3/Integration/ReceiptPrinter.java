@@ -2,7 +2,6 @@ package Integration;
 
 import java.util.List;
 import Model.Sale;
-import Integration.ItemDTO;
 
 public class ReceiptPrinter {
     private Sale sale;
