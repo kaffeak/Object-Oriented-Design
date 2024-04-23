@@ -15,8 +15,7 @@ public class Controller {
 
     Controller cont = new Controller();
     
-    public Controller(Sale sale, ExternalAccountingSystem accountingSystem, ExternalInventorySystem inventorySystem, ReceiptPrinter printer, DiscountDB discount){
-        this.sale = sale;
+    public Controller(ExternalAccountingSystem accountingSystem, ExternalInventorySystem inventorySystem, ReceiptPrinter printer, DiscountDB discount){
         this.discount = discount;
         this.accountingSystem = accountingSystem;
         this.inventorySystem = inventorySystem;
