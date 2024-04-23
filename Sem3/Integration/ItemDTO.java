@@ -1,3 +1,5 @@
+package integration;
+
 public class ItemDTO {
 
     private int itemID;
