@@ -21,14 +21,19 @@ public class Sale {
     public void addToSale(ItemDTO item, int quantity){
         while (quantity-- > 0){
             this.items.add(item);
-            runningTotal += item.getPrice() + item.getPrice() * item.getVAT();
+            this.runningTotal += item.getPrice() + item.getPrice() * item.getVAT();
         }
     }
     public AddToSaleInfo getAddToSaleInfo(){
-        return new AddToSaleInfo(items.get(items.size()-1), runningTotal);
+        return new AddToSaleInfo(this.items.get(this.items.size()-1), this.runningTotal);
     }
-
-    public static void main(String[] args){
-
+    public ArrayList<ItemDTO> getItems() {
+        return this.items;
+    }
+    public Timestamp getTimestamp() {
+        return this.timestamp;
+    }
+    public float getRunningTotal() {
+        return runningTotal;
     }
 }
