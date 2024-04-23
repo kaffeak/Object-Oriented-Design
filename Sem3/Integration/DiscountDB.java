@@ -7,7 +7,7 @@ import Model.Sale;
 import Integration.ItemDTO;
 
 public class DiscountDB {
-    
+    public DiscountDB(){}
 
     public float getDiscounts(int customerId, Sale currentSale){
         float totalAfterDiscounts = itemDiscount(currentSale.getItems());
