@@ -1,9 +1,7 @@
 package Controller;
 
-import Model.AddToSaleInfo;
-import Model.Sale;
-import Integration.DiscountDB;
-import Integration.ItemDTO;
+import Model.*;
+import Integration.*;
 
 public class Controller {
     private ExternalAccountingSystem accountingSystem;
@@ -12,8 +10,6 @@ public class Controller {
     private DiscountDB discount;
     private Sale sale;
     private AddToSaleInfo saleInfo;
-
-    Controller cont = new Controller();
     
     public Controller(ExternalAccountingSystem accountingSystem, ExternalInventorySystem inventorySystem, ReceiptPrinter printer, DiscountDB discount){
         this.discount = discount;
