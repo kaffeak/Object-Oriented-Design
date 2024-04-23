@@ -7,6 +7,7 @@ import Integration.ItemDTO;
 public class ReceiptPrinter {
     private Sale sale;
     private List<ItemDTO> items;
+        public ReceiptPrinter(){}
 
     public void printReciept(Sale sale){
         StringBuilder sb = new StringBuilder();
