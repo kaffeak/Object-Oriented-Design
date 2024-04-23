@@ -4,7 +4,9 @@ import java.util.List;
 
 public class ExternalInventorySystem {
     private ItemDTO item;
-
+    
+    private List<ItemDTO> invetnoryItems = {{1, "test", 12387f, 0.87f}, };
+    
     public ExternalInventorySystem() {
     }
 

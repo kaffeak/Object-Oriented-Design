@@ -1,0 +1,591 @@
+
+		
+			1
+			"Amal Bowers"
+			92
+			"25%"
+			2
+			"McKenzie Graham"
+			439
+			"25%"		
+			3
+			"Nehru Phelps"
+			176
+			"16%"	
+			4
+			"Jakeem Fisher"
+			30
+			"16%"	
+			5
+			"Tatum Morrison"
+			192
+			"25%"
+			6
+			"Rhona Ellison"
+			158
+			"25%"
+		
+		
+			7
+			"Rooney Le"
+			445
+			"16%"
+		
+		
+			8
+			"Jermaine Clayton"
+			7
+			"6%"
+		
+		
+			9
+			"Jelani Gallegos"
+			492
+			"6%"
+		
+		
+			10
+			"Jessica Terry"
+			281
+			"16%"
+		
+		
+			11
+			"Tad Klein"
+			387
+			"25%"
+		
+		
+			12
+			"Hashim Hamilton"
+			386
+			"16%"
+		
+		
+			13
+			"Kitra Rose"
+			353
+			"16%"
+		
+		
+			14
+			"Thor Thornton"
+			369
+			"6%"
+		
+		
+			15
+			"Erica Jordan"
+			407
+			"6%"
+		
+		
+			16
+			"Bradley Goodwin"
+			58
+			"25%"
+		
+		
+			17
+			"Bertha Peters"
+			65
+			"16%"
+		
+		
+			18
+			"Faith Bass"
+			72
+			"25%"
+		
+		
+			19
+			"Armand Chapman"
+			131
+			"25%"
+		
+		
+			20
+			"Raymond Parker"
+			471
+			"25%"
+		
+		
+			21
+			"Isabelle Haley"
+			53
+			"16%"
+		
+		
+			22
+			"Justina Riddle"
+			30
+			"16%"
+		
+		
+			23
+			"Sylvester Goodwin"
+			399
+			"25%"
+		
+		
+			24
+			"Claire Scott"
+			281
+			"16%"
+		
+		
+			25
+			"Susan Dotson"
+			362
+			"25%"
+		
+		
+			26
+			"Tashya Welch"
+			180
+			"16%"
+		
+		
+			27
+			"Isabella Saunders"
+			74
+			"25%"
+		
+		
+			28
+			"Shoshana Blevins"
+			38
+			"25%"
+		
+		
+			29
+			"Yuli Andrews"
+			333
+			"6%"
+		
+		
+			30
+			"Stella Montgomery"
+			98
+			"6%"
+		
+		
+			31
+			"Ashton Bond"
+			74
+			"16%"
+		
+		
+			32
+			"Dale Williams"
+			47
+			"16%"
+		
+		
+			33
+			"Elijah Gutierrez"
+			94
+			"16%"
+		
+		
+			34
+			"Lionel Singleton"
+			371
+			"25%"
+		
+		
+			35
+			"Ainsley Farley"
+			8
+			"16%"
+		
+		
+			36
+			"Medge Walters"
+			205
+			"6%"
+		
+		
+			37
+			"Jerry Walter"
+			177
+			"16%"
+		
+		
+			38
+			"Kieran Porter"
+			447
+			"25%"
+		
+		
+			39
+			"Briar Berger"
+			298
+			"16%"
+		
+		
+			40
+			"Rebekah Mcmahon"
+			121
+			"25%"
+		
+		
+			41
+			"Eleanor Blackburn"
+			469
+			"6%"
+		
+		
+			42
+			"Aurelia Pope"
+			305
+			"25%"
+		
+		
+			43
+			"Mariam Browning"
+			361
+			"16%"
+		
+		
+			44
+			"Brock Bird"
+			18
+			"16%"
+		
+		
+			45
+			"Hedley Wynn"
+			43
+			"16%"
+		
+		
+			46
+			"Lamar Paul"
+			240
+			"16%"
+		
+		
+			47
+			"Debra Hinton"
+			371
+			"6%"
+		
+		
+			48
+			"Curran Mooney"
+			13
+			"25%"
+		
+		
+			49
+			"Dacey Stephenson"
+			160
+			"16%"
+		
+		
+			50
+			"Oleg Sosa"
+			413
+			"6%"
+		
+		
+			51
+			"Sarah Bean"
+			154
+			"16%"
+		
+		
+			52
+			"Conan Cannon"
+			25
+			"6%"
+		
+		
+			53
+			"Marsden Stanley"
+			424
+			"25%"
+		
+		
+			54
+			"Ashely Burns"
+			90
+			"16%"
+		
+		
+			55
+			"Meghan Callahan"
+			93
+			"25%"
+		
+		
+			56
+			"Fletcher Shepard"
+			98
+			"16%"
+		
+		
+			57
+			"Emmanuel Gilbert"
+			203
+			"16%"
+		
+		
+			58
+			"Akeem Poole"
+			257
+			"25%"
+		
+		
+			59
+			"Lucius Mann"
+			494
+			"6%"
+		
+		
+			60
+			"Vera Mcintyre"
+			90
+			"16%"
+		
+		
+			61
+			"Theodore Cleveland"
+			17
+			"16%"
+		
+		
+			62
+			"Brendan Levy"
+			222
+			"6%"
+		
+		
+			63
+			"Aquila Robertson"
+			119
+			"16%"
+		
+		
+			64
+			"Rebecca Leblanc"
+			364
+			"16%"
+		
+		
+			65
+			"Cadman Cain"
+			356
+			"16%"
+		
+		
+			66
+			"Yeo Owen"
+			157
+			"16%"
+		
+		
+			67
+			"Britanni Day"
+			312
+			"16%"
+		
+		
+			68
+			"Adrienne Bird"
+			74
+			"25%"
+		
+		
+			69
+			"Paul Bass"
+			482
+			"16%"
+		
+		
+			70
+			"Lee Matthews"
+			266
+			"16%"
+		
+		
+			71
+			"Judith Grimes"
+			430
+			"25%"
+		
+		
+			72
+			"Irma Elliott"
+			117
+			"6%"
+		
+		
+			73
+			"Keith Mccoy"
+			452
+			"25%"
+		
+		
+			74
+			"Karly Nunez"
+			40
+			"6%"
+		
+		
+			75
+			"Josephine Harris"
+			16
+			"16%"
+		
+		
+			76
+			"Aphrodite Barnett"
+			291
+			"16%"
+		
+		
+			77
+			"Emerson Estes"
+			143
+			"16%"
+		
+		
+			78
+			"Gregory Burke"
+			33
+			"16%"
+		
+		
+			79
+			"Patience Harvey"
+			408
+			"16%"
+		
+		
+			80
+			"Chava Flores"
+			84
+			"6%"
+		
+		
+			81
+			"Sophia Farley"
+			473
+			"25%"
+		
+		
+			82
+			"Theodore Quinn"
+			461
+			"25%"
+		
+		
+			83
+			"Sean Holland"
+			423
+			"25%"
+		
+		
+			84
+			"Scarlet Mason"
+			263
+			"6%"
+		
+		
+			85
+			"Paloma Justice"
+			108
+			"6%"
+		
+		
+			86
+			"Althea Delgado"
+			374
+			"25%"
+		
+		
+			87
+			"Shelby Mayo"
+			447
+			"25%"
+		
+		
+			88
+			"Tyler Carroll"
+			280
+			"16%"
+		
+		
+			89
+			"Hedda Chandler"
+			98
+			"16%"
+		
+		
+			90
+			"Iola Delaney"
+			386
+			"25%"
+		
+		
+			91
+			"Donna Santana"
+			355
+			"16%"
+		
+		
+			92
+			"Cole Molina"
+			489
+			"25%"
+		
+		
+			93
+			"Odessa Chen"
+			317
+			"6%"
+		
+		
+			94
+			"Aurelia Wheeler"
+			173
+			"16%"
+		
+		
+			95
+			"Drake Jensen"
+			329
+			"16%"
+		
+		
+			96
+			"Signe Page"
+			31
+			"16%"
+		
+		
+			97
+			"Jana Cooley"
+			41
+			"6%"
+		
+		
+			98
+			"Tatyana Olson"
+			275
+			"25%"
+		
+		
+			99
+			"Noel Booth"
+			100
+			"16%"
+		
+		
+			100
+			"Myra Malone"
+			97
+			"16%"
+		
