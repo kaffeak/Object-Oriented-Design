@@ -11,31 +11,29 @@ public class Controller {
     private ReceiptPrinter printer;
     private DiscountDB discount;
     private Sale sale;
-    private View view;
     private AddToSaleInfo saleInfo;
 
     Controller cont = new Controller();
     
-    public Controller(Sale sale, View view, ExternalAccountingSystem accountingSystem, ExternalInventorySystem inventorySystem, ReceiptPrinter printer, DiscountDB discount){
+    public Controller(Sale sale, ExternalAccountingSystem accountingSystem, ExternalInventorySystem inventorySystem, ReceiptPrinter printer, DiscountDB discount){
         this.sale = sale;
         this.discount = discount;
         this.accountingSystem = accountingSystem;
         this.inventorySystem = inventorySystem;
         this.printer = printer;
-        this.view = view;
     }
     
     public void startSale(){
         sale = new Sale();
     }
     public void addItem(int quantity, int itemID){
-        
+        sale.addToSale(null, quantity);
     }
     public float endSale(){
         return sale.getRunningTotal();
     }
     public float retrieveDiscount(int customerId){
-        return sale.get;
+        return discount.getDiscounts(customerId, sale);
     }
     public float getChange(){
 
