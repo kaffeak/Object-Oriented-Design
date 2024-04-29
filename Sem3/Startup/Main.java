@@ -10,7 +10,7 @@ public class Main {
         ExternalAccountingSystem accountingSystem = new ExternalAccountingSystem();
         ExternalInventorySystem inventorySystem = new ExternalInventorySystem();
         ReceiptPrinter printer = new ReceiptPrinter();
-        Controller contr = new Controller( accountingSystem, inventorySystem, printer, discounts);
+        Controller contr = new Controller(accountingSystem, inventorySystem, printer, discounts);
         View view = new View(contr);
     }
 }

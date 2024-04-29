@@ -4,23 +4,29 @@ import java.util.List;
 import Model.Sale;
 
 public class ReceiptPrinter {
-    private Sale sale;
     private List<ItemDTO> items;
-        public ReceiptPrinter(){}
 
-    public void printReciept(Sale sale){
+    public ReceiptPrinter(){}
+
+    public void printReceipt(Sale sale){
         StringBuilder sb = new StringBuilder();
+        sb.append("---------------------------" + "\n");
+        sb.append("Item: | Price(SEK) | VAT(%)" + "\n");
+        sb.append("---------------------------" + "\n");
 
         items = sale.getItems();
         ItemDTO item;
         int i = items.size();
         while (i-- > 0){
             item = items.get(i);
-            sb.append(item.getName() + item.getPrice() + item.getVAT() + "\n");
-            i++;
+            sb.append(item.getName() + " " + item.getPrice() + " " + item.getVAT() + "\n");
         }
-        sb.append(sale.getRunningTotal() + "\n");
+        sb.append("---------------------------" + "\n");
+        sb.append("Total:" + "\n");
+        sb.append(sale.getRunningTotal() + "\n" + "\n");
+        sb.append("Time and date:" + "\n");
         sb.append(sale.getTimestamp() + "\n");
+        sb.append("---------------------------" + "\n");
         System.out.println(sb.toString());
     }
 }

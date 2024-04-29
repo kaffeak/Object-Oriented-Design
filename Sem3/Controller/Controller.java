@@ -21,17 +21,22 @@ public class Controller {
     public void startSale(){
         sale = new Sale();
     }
+
     public void addItem(int quantity, int itemID){
-        sale.addToSale(null, quantity);
+        sale.addToSale(inventorySystem.getItem(itemID), quantity);
     }
+
     public float endSale(){
+        printer.printReceipt(sale);
         return sale.getRunningTotal();
     }
+
     public float retrieveDiscount(int customerId){
         return discount.getDiscounts(customerId, sale);
     }
+
     public float getChange(){
-        
+        return 0;
     }
     
 }
