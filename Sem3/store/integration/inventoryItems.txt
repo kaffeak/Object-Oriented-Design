@@ -1,0 +1,5 @@
+0 Banana 10.50 12
+1 Apple 8.90 12
+2 Milk 19.90 12
+3 Spatula 25 25
+4 Porkchop 69.90 12
