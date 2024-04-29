@@ -6,10 +6,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
 
+/**
+ * Represents the store systems external inventory part
+ */
 public class ExternalInventorySystem {
     private ItemDTO itemDTO;
     private List<ItemDTO> inventoryItems = new ArrayList<>();
 
+    /**
+     * Creates a new instance of ExternalInventorySystem.
+     * 
+     */
     public ExternalInventorySystem() {
         try {
             File inventory = new File("store/integration/inventoryItems.txt");
@@ -28,25 +35,26 @@ public class ExternalInventorySystem {
         }
     }
 
+    /**
+     * Updates the inventory status based on an {@link ItemDTO} list. 
+     * 
+     * @param item The <code>ItemDTO</code> list that will update the inventory with.
+     */
     public void updateInventory(List<ItemDTO> items){
         //get items from External inventory system regarding provided list
         //count quantity of each item in provided list
         //push changes to External inventory system
     }
 
+    /**
+     * Returns an {@link ItemDTO} from the inventory based on an itemID. 
+     * 
+     * @param itemID The itemId used to search in the inventory for an <code>ItemDTO</code>.
+     * @return The <code>ItemDTO</code> of the item with the corresponding itemID or null if not found.
+     */
     public ItemDTO getItem(int ItemID){
         //Extract item information from external inventory system with provided ID
         //Return THIS item
         return inventoryItems.get(ItemID);
     }
-    /*
-    public static void main(String args[]) {
-        ExternalInventorySystem ex = new ExternalInventorySystem();
-        System.out.println(ex.getItem(0).getName());
-        System.out.println(ex.getItem(1).getName());
-        System.out.println(ex.getItem(2).getName());
-        System.out.println(ex.getItem(3).getName());
-        System.out.println(ex.getItem(4).getName());
-
-    }*/
 }

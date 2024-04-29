@@ -7,18 +7,33 @@ import store.integration.ItemDTO;
 
 
 /**
- * Sale
+ * Represents the ongoing sale.
  */
 public class Sale {
     private Timestamp timestamp;
     private float runningTotal;
     private ArrayList<ItemDTO> items;
-    
+
+    /**
+     * Creates a new instance of Sale.
+     * 
+     */
     public Sale(){
         this.timestamp = new Timestamp(System.currentTimeMillis());
         this.runningTotal = 0;
         this.items = new ArrayList<ItemDTO>();
     }
+
+    /**
+     * Adds an {@link ItemDTO} to the sale object and increases the 
+     * running total of the sale. It returns an {@link AddToSaleInfo} 
+     * instance with the current running total and the added {@link ItemDTO}. 
+     * 
+     * @param item The <code>ItemDTO</code> to be added to the sale.
+     * @param quantity The amount of items that should be added to sale.
+     * @return The <code>AddToSaleInfo</code> containing information about 
+     *         the last added item and the running total for the sale.
+     */
     public AddToSaleInfo addToSale(ItemDTO item, int quantity){
         while (quantity-- > 0){
             this.items.add(item);
@@ -29,13 +44,39 @@ public class Sale {
     private AddToSaleInfo getAddToSaleInfo(){
         return new AddToSaleInfo(this.items.get(this.items.size()-1), this.runningTotal);
     }
+
+    /**
+     * Returns the list of {@link ItemDTO} in sale.
+     * 
+     * @return The list of <code>ItemDTO</code> in sale.
+     */
     public ArrayList<ItemDTO> getItems() {
         return this.items;
     }
+
+    /**
+     * Returns the timestamp from when the sale started.
+     * 
+     * @return The timestamp from when the sale started.
+     */
     public Timestamp getTimestamp() {
         return this.timestamp;
     }
+
+    /**
+     * Returns the running total for the sale.
+     * 
+     * @return The running total for the sale.
+     */
     public float getRunningTotal() {
         return runningTotal;
+    }
+
+    /**
+     * Sets the value for running total
+     * 
+     */
+    public void setRunningTotal(float newRunningTotal) {
+        this.runningTotal = newRunningTotal;
     }
 }

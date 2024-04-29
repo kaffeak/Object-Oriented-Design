@@ -5,20 +5,36 @@ import java.util.Random;
 
 import store.model.Sale;
 
+/**
+ * Represents the store systems discount database part
+ */
 public class DiscountDB {
+
+    /**
+    * Represents the store systems external accounting part
+    */
     Random rand = new Random();
     public DiscountDB(){}
 
-    public float getDiscounts(int customerId, Sale currentSale){
+    /**
+     * Calculates the running total for the sale after discounts 
+     * have been accounted for. The discounts are based on the customer
+     * id, items in and running total of the {@link Sale}.
+     * 
+     * @param customerID The id of the customer.
+     * @param currentSale The <code>Sale</code> that the discounts will be based on.
+     * @return The new running total of the sale.
+     */
+    public float getDiscounts(int customerID, Sale currentSale){
         float totalAfterDiscounts = itemDiscount(currentSale.getItems());
-        totalAfterDiscounts = totalAfterDiscounts * personalDiscount(customerId);
+        totalAfterDiscounts = totalAfterDiscounts * personalDiscount(customerID);
         totalAfterDiscounts = totalAfterDiscounts * totalPriceDiscount(currentSale.getRunningTotal());
         return totalAfterDiscounts;
     }
 
     //This function would return a discount connected to the specific customer
-    private float personalDiscount(int customerId){
-        return 0.5f;//new Random(customerId).nextFloat(0.5f); 
+    private float personalDiscount(int customerID){
+        return 0.5f;//new Random(customerID).nextFloat(0.5f); 
     }
     //This function would return a discount based on specific items
     private float itemDiscount(ArrayList<ItemDTO> items){
