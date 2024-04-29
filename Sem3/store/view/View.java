@@ -23,7 +23,7 @@ public class View {
                        "\nItem cost: " + (temp.getItem().getPrice() * (1+(temp.getItem().getVAT()/100))) + " SEK\n" +
                        "VAT: " + temp.getItem().getVAT() + "%\n" +
                        "Item description: " + temp.getItem().getItemDescription() +
-                       "\nTotal cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
+                       "\n\nTotal cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
                        "Total VAT: " + temp.getTotalVAT() + " SEK\n");
         temp = contr.addItem(3, 3);
         System.out.println("Add 3 items with item id 3:\n" +
@@ -32,7 +32,7 @@ public class View {
                        "\nItem cost: " + (temp.getItem().getPrice() * (1+(temp.getItem().getVAT()/100))) + " SEK\n" +
                        "VAT: " + temp.getItem().getVAT() + "%\n" +
                        "Item description: " + temp.getItem().getItemDescription() +
-                       "\nTotal cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
+                       "\n\nTotal cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
                        "Total VAT: " + temp.getTotalVAT() + " SEK\n");
         temp = contr.addItem(2, 2);
         System.out.println("Add 2 items with item id 2:\n" +
@@ -41,7 +41,7 @@ public class View {
                        "\nItem cost: " + (temp.getItem().getPrice() * (1+(temp.getItem().getVAT()/100))) + " SEK\n" +
                        "VAT: " + temp.getItem().getVAT() + "%\n" +
                        "Item description: " + temp.getItem().getItemDescription() +
-                       "\nTotal cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
+                       "\n\nTotal cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
                        "Total VAT: " + temp.getTotalVAT() + " SEK\n");
         temp = contr.addItem(1, 3);
         System.out.println("Add 3 items with item id 1:\n" +
@@ -50,7 +50,7 @@ public class View {
                        "\nItem cost: " + (temp.getItem().getPrice() * (1+(temp.getItem().getVAT()/100))) + " SEK\n" +
                        "VAT: " + temp.getItem().getVAT() + "%\n" +
                        "Item description: " + temp.getItem().getItemDescription() +
-                       "\nTotal cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
+                       "\n\nTotal cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
                        "Total VAT: " + temp.getTotalVAT() + " SEK\n");
         temp = contr.addItem(0, 1);
         System.out.println("Add 1 items with item id 0:\n" +
@@ -59,7 +59,7 @@ public class View {
                        "\nItem cost: " + (temp.getItem().getPrice() * (1+(temp.getItem().getVAT()/100))) + " SEK\n" +
                        "VAT: " + temp.getItem().getVAT() + "%\n" +
                        "Item description: " + temp.getItem().getItemDescription() +
-                       "\nTotal cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
+                       "\n\nTotal cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
                        "Total VAT: " + temp.getTotalVAT() + " SEK\n");
         System.out.println("End Sale:\n" + 
                            "Total cost (incl VAT) " + contr.endSale() + " SEK\n");

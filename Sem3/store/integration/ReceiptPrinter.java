@@ -33,7 +33,7 @@ public class ReceiptPrinter {
         List<ItemDTO> items = sale.getItems();
         Set<ItemDTO> st = new HashSet<ItemDTO>(items);
         for (ItemDTO s : st)
-            sb.append(s.getName() + "\t\t" + Collections.frequency(items, s) + " x " + ((1+s.getVAT() * s.getPrice())) + "\t" + (Collections.frequency(items, s)*((1+s.getVAT() * s.getPrice()))) + " SEK\n");
+            sb.append(s.getName() + "\t\t" + Collections.frequency(items, s) + " x " + ((1+(s.getVAT()/100)) * s.getPrice()) + "\t" + (Collections.frequency(items, s)*(((1+(s.getVAT()/100)) * s.getPrice()))) + " SEK\n");
         
         sb.append("Total:\t\t\t\t" + sale.getRunningTotal() + " SEK\n");
         sb.append("VAT: " + sale.getTotalVAT());
