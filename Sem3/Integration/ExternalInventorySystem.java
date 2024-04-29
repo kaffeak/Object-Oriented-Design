@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
 
-import Integration.ItemDTO;
-
 public class ExternalInventorySystem {
     private ItemDTO itemDTO;
     private List<ItemDTO> inventoryItems = new ArrayList<>();
@@ -23,6 +21,7 @@ public class ExternalInventorySystem {
                 itemDTO = new ItemDTO(Integer.parseInt(info[0]), info[1], Float.parseFloat(info[2]), Float.parseFloat(info[3]));
                 inventoryItems.add(itemDTO);
             }
+            scanner.close();
         } catch (FileNotFoundException ex) {
             System.out.println("An error occurred.");
             ex.printStackTrace();

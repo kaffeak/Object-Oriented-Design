@@ -8,7 +8,7 @@ public class ReceiptPrinter {
 
     public ReceiptPrinter(){}
 
-    public void printReceipt(Sale sale){
+    public void printReceipt(Sale sale, int amountPaid, float change){
         StringBuilder sb = new StringBuilder();
         sb.append("---------------------------" + "\n");
         sb.append("Item: | Price(SEK) | VAT(%)" + "\n");
@@ -24,6 +24,10 @@ public class ReceiptPrinter {
         sb.append("---------------------------" + "\n");
         sb.append("Total:" + "\n");
         sb.append(sale.getRunningTotal() + "\n" + "\n");
+        sb.append("Amount paid:" + "\n");
+        sb.append(amountPaid + "\n" + "\n");
+        sb.append("Change back:" + "\n");
+        sb.append(change + "\n" + "\n");
         sb.append("Time and date:" + "\n");
         sb.append(sale.getTimestamp() + "\n");
         sb.append("---------------------------" + "\n");

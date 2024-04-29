@@ -9,7 +9,6 @@ public class Controller {
     private ReceiptPrinter printer;
     private DiscountDB discount;
     private Sale sale;
-    private AddToSaleInfo saleInfo;
     
     public Controller(ExternalAccountingSystem accountingSystem, ExternalInventorySystem inventorySystem, ReceiptPrinter printer, DiscountDB discount){
         this.discount = discount;
@@ -22,12 +21,11 @@ public class Controller {
         sale = new Sale();
     }
 
-    public void addItem(int quantity, int itemID){
-        sale.addToSale(inventorySystem.getItem(itemID), quantity);
+    public AddToSaleInfo addItem(int quantity, int itemID){
+        return sale.addToSale(inventorySystem.getItem(itemID), quantity);
     }
 
     public float endSale(){
-        printer.printReceipt(sale);
         return sale.getRunningTotal();
     }
 
@@ -35,8 +33,12 @@ public class Controller {
         return discount.getDiscounts(customerId, sale);
     }
 
-    public float getChange(){
-        return 0;
+    public float getChange(int amountPaid){
+        float change = accountingSystem.getChange(amountPaid, sale);
+        accountingSystem.sendToAccounting(sale);
+        inventorySystem.updateInventory(sale.getItems());
+        printer.printReceipt(sale, amountPaid, change);
+        return change;
     }
     
 }
