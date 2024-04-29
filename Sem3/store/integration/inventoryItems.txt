@@ -1,5 +1,5 @@
-0 Banana 10.50 12
-1 Apple 8.90 12
-2 Milk 19.90 12
-3 Spatula 25 25
-4 Porkchop 69.90 12
+0,Banana,10.50,12,A Yellow fruit
+1,Apple,8.90,12,A fruit from a tree
+2,Milk,19.90,12,White liquid from a cow
+3,Spatula,25,25,Something to use in the fryingpan
+4,Porkchop,69.90,12,A piece of meat from a pig

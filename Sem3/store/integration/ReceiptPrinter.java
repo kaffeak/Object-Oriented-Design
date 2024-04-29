@@ -1,6 +1,9 @@
 package store.integration;
 
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import store.model.Sale;
 /**
@@ -24,27 +27,19 @@ public class ReceiptPrinter {
      */
     public void printReceipt(Sale sale, int amountPaid, float change){
         StringBuilder sb = new StringBuilder();
-        sb.append("---------------------------" + "\n");
-        sb.append("Item: | Price(SEK) | VAT(%)" + "\n");
-        sb.append("---------------------------" + "\n");
+        sb.append("\n--------------Begin receipt--------------" + "\n");
+        sb.append("Time of sale:" + sale.getTimestamp() + "\n\n");
 
-        items = sale.getItems();
-        ItemDTO item;
-        int i = items.size();
-        while (i-- > 0){
-            item = items.get(i);
-            sb.append(item.getName() + " " + item.getPrice() + " " + item.getVAT() + "\n");
-        }
-        sb.append("---------------------------" + "\n");
-        sb.append("Total:" + "\n");
-        sb.append(sale.getRunningTotal() + "\n" + "\n");
-        sb.append("Amount paid:" + "\n");
-        sb.append(amountPaid + "\n" + "\n");
-        sb.append("Change back:" + "\n");
-        sb.append(change + "\n" + "\n");
-        sb.append("Time and date:" + "\n");
-        sb.append(sale.getTimestamp() + "\n");
-        sb.append("---------------------------" + "\n");
+        List<ItemDTO> items = sale.getItems();
+        Set<ItemDTO> st = new HashSet<ItemDTO>(items);
+        for (ItemDTO s : st)
+            sb.append(s.getName() + "\t\t" + Collections.frequency(items, s) + " x " + ((1+s.getVAT() * s.getPrice())) + "\t" + (Collections.frequency(items, s)*((1+s.getVAT() * s.getPrice()))) + " SEK\n");
+        
+        sb.append("Total:\t\t\t\t" + sale.getRunningTotal() + " SEK\n");
+        sb.append("VAT: " + sale.getTotalVAT());
+        sb.append("\n\nCash:\t\t\t\t" + amountPaid + " SEK\n");
+        sb.append("Change:\t\t\t\t" + change + " SEK\n");
+        sb.append("---------------End receipt---------------" + "\n");
         System.out.println(sb.toString());
     }
 }

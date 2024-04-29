@@ -17,6 +17,7 @@ public class ExternalAccountingSystem {
      * @param sale The <code>Sale</code> that should be accounted.
      */
     public void sendToAccounting(Sale sale){
+        System.out.println("Sent sale info to external accounting system.");
         //Send info about sale to accounting
     }
 
@@ -29,6 +30,7 @@ public class ExternalAccountingSystem {
      * @return The change that the customer shuld get back.
      */
     public float getChange(int amountPaid, float runningTotal){
+        System.out.println("Customer pays " + amountPaid + " SEK:");
         return ((float) amountPaid - runningTotal);
     }
 }

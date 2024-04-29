@@ -8,17 +8,20 @@ import store.integration.ItemDTO;
 public class AddToSaleInfo {
     private ItemDTO item;
     private float runningTotal;
+    private float totalVAT;
 
     /**
      * Creates a new instance of AddToSaleInfo, representing 
-     * the last added item and the running total of the sale.
+     * the last added item, the running total and the total VAT of the sale.
      * 
      * @param item The <code>ItemDTO</code> represented by the newly created instance.
      * @param runningTotal The running total represented by the newly created instance.
+     * @param totalVAT The total VAT representad by the newly created instance.
      */
-    public AddToSaleInfo(ItemDTO item, float runningTotal){
+    public AddToSaleInfo(ItemDTO item, float runningTotal, float totalVAT){
         this.item = item;
         this.runningTotal = runningTotal;
+        this.totalVAT = totalVAT;
     }
 
     /**
@@ -37,5 +40,14 @@ public class AddToSaleInfo {
      */
     public float getRunningTotal() {
         return runningTotal;
+    }
+
+    /**
+     * Returns the running total in the object.
+     * 
+     * @return The running total in the object.
+     */
+    public float getTotalVAT(){
+        return totalVAT;
     }
 }

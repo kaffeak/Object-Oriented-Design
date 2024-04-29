@@ -3,7 +3,10 @@ package store.integration;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.List;
 
 /**
@@ -24,8 +27,8 @@ public class ExternalInventorySystem {
             String[] info;
             int i = 0;
             while (scanner.hasNextLine()) {
-                info = scanner.nextLine().split(" ");
-                itemDTO = new ItemDTO(Integer.parseInt(info[0]), info[1], Float.parseFloat(info[2]), Float.parseFloat(info[3]));
+                info = scanner.nextLine().split(",");
+                itemDTO = new ItemDTO(Integer.parseInt(info[0]), info[1], Float.parseFloat(info[2]), Float.parseFloat(info[3]), info[4]);
                 inventoryItems.add(itemDTO);
             }
             scanner.close();
@@ -44,6 +47,9 @@ public class ExternalInventorySystem {
         //get items from External inventory system regarding provided list
         //count quantity of each item in provided list
         //push changes to External inventory system
+        Set<ItemDTO> st = new HashSet<ItemDTO>(items);
+        for (ItemDTO s : st)
+            System.out.println("Told external inventory system to decrease inventory quantity of item " + s.getItemID() + " by " + Collections.frequency(items, s) + " units");
     }
 
     /**

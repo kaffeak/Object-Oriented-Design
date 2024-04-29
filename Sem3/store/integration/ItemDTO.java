@@ -9,6 +9,7 @@ public class ItemDTO {
     private float VAT;
     private String name;
     private float price;
+    private String description;
 
     /**
      * Creates a new instance of ItemDTO, representing an item in the store system.
@@ -17,12 +18,14 @@ public class ItemDTO {
      * @param name The name represented by the newly created instance. 
      * @param price The price represented by the newly created instance.
      * @param VAT The VAT represented by the newly created instance.
+     * @param description The description represented by the newly created instance.
      */
-    public ItemDTO(int itemID, String name, float price, float VAT){
+    public ItemDTO(int itemID, String name, float price, float VAT, String description){
         this.itemID = itemID;
         this.name = name;
         this.price = price;
         this.VAT = VAT;
+        this.description = description;
     }
 
     /**
@@ -41,6 +44,15 @@ public class ItemDTO {
      */
     public String getName(){
         return this.name;
+    }
+
+    /**
+     * Returns the item description of the item.
+     * 
+     * @return Returns the item description of the item.
+     */
+    public String getItemDescription(){
+        return this.description;
     }
 
     /**

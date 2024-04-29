@@ -12,6 +12,7 @@ import store.integration.ItemDTO;
 public class Sale {
     private Timestamp timestamp;
     private float runningTotal;
+    private float totalVAT;
     private ArrayList<ItemDTO> items;
 
     /**
@@ -21,6 +22,7 @@ public class Sale {
     public Sale(){
         this.timestamp = new Timestamp(System.currentTimeMillis());
         this.runningTotal = 0;
+        this.totalVAT = 0;
         this.items = new ArrayList<ItemDTO>();
     }
 
@@ -38,11 +40,12 @@ public class Sale {
         while (quantity-- > 0){
             this.items.add(item);
             this.runningTotal += item.getPrice() * ((item.getVAT()/100) + 1);
+            this.totalVAT +=  item.getPrice() * item.getVAT()/100;
         }
         return getAddToSaleInfo();
     }
     private AddToSaleInfo getAddToSaleInfo(){
-        return new AddToSaleInfo(this.items.get(this.items.size()-1), this.runningTotal);
+        return new AddToSaleInfo(this.items.get(this.items.size()-1), this.runningTotal, this.totalVAT);
     }
 
     /**
@@ -70,6 +73,15 @@ public class Sale {
      */
     public float getRunningTotal() {
         return runningTotal;
+    }
+
+    /**
+     * Returns the total VAT for the sale.
+     * 
+     * @return The total VAT for the sale.
+     */
+    public float getTotalVAT(){
+        return this.totalVAT;
     }
 
     /**

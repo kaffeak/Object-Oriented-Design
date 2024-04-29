@@ -17,16 +17,56 @@ public class View {
         AddToSaleInfo temp;
         contr.startSale();
         temp = contr.addItem(0, 10);
-        System.out.println("Item: " + temp.getItem().getName() + ", Total amount: " + temp.getRunningTotal());
+        System.out.println("Add 10 items with item id 0:\n" +
+                       "Item ID: " + temp.getItem().getItemID() +
+                       "\nItem name: " + temp.getItem().getName() +
+                       "\nItem cost: " + (temp.getItem().getPrice() * (1+(temp.getItem().getVAT()/100))) + " SEK\n" +
+                       "VAT: " + temp.getItem().getVAT() + "%\n" +
+                       "Item description: " + temp.getItem().getItemDescription() +
+                       "Total cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
+                       "Total VAT: " + temp.getTotalVAT() + " SEK\n");
         temp = contr.addItem(3, 3);
-        System.out.println("Item: " + temp.getItem().getName() + ", Total amount: " + temp.getRunningTotal());
+        System.out.println("Add 3 items with item id 3:\n" +
+                       "Item ID: " + temp.getItem().getItemID() +
+                       "\nItem name: " + temp.getItem().getName() +
+                       "\nItem cost: " + (temp.getItem().getPrice() * (1+(temp.getItem().getVAT()/100))) + " SEK\n" +
+                       "VAT: " + temp.getItem().getVAT() + "%\n" +
+                       "Item description: " + temp.getItem().getItemDescription() +
+                       "Total cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
+                       "Total VAT: " + temp.getTotalVAT() + " SEK\n");
         temp = contr.addItem(2, 2);
-        System.out.println("Item: " + temp.getItem().getName() + ", Total amount: " + temp.getRunningTotal());
+        System.out.println("Add 2 items with item id 2:\n" +
+                       "Item ID: " + temp.getItem().getItemID() +
+                       "\nItem name: " + temp.getItem().getName() +
+                       "\nItem cost: " + (temp.getItem().getPrice() * (1+(temp.getItem().getVAT()/100))) + " SEK\n" +
+                       "VAT: " + temp.getItem().getVAT() + "%\n" +
+                       "Item description: " + temp.getItem().getItemDescription() +
+                       "Total cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
+                       "Total VAT: " + temp.getTotalVAT() + " SEK\n");
         temp = contr.addItem(1, 3);
-        System.out.println("Item: " + temp.getItem().getName() + ", Total amount: " + temp.getRunningTotal());
+        System.out.println("Add 3 items with item id 1:\n" +
+                       "Item ID: " + temp.getItem().getItemID() +
+                       "\nItem name: " + temp.getItem().getName() +
+                       "\nItem cost: " + (temp.getItem().getPrice() * (1+(temp.getItem().getVAT()/100))) + " SEK\n" +
+                       "VAT: " + temp.getItem().getVAT() + "%\n" +
+                       "Item description: " + temp.getItem().getItemDescription() +
+                       "Total cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
+                       "Total VAT: " + temp.getTotalVAT() + " SEK\n");
         temp = contr.addItem(0, 1);
-        System.out.println("Item: " + temp.getItem().getName() + ", Total amount: " + temp.getRunningTotal());
-        System.out.println(contr.endSale());
-        contr.getChange(500);
+        System.out.println("Add 1 items with item id 0:\n" +
+                       "Item ID: " + temp.getItem().getItemID() +
+                       "\nItem name: " + temp.getItem().getName() +
+                       "\nItem cost: " + (temp.getItem().getPrice() * (1+(temp.getItem().getVAT()/100))) + " SEK\n" +
+                       "VAT: " + temp.getItem().getVAT() + "%\n" +
+                       "Item description: " + temp.getItem().getItemDescription() +
+                       "Total cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
+                       "Total VAT: " + temp.getTotalVAT() + " SEK\n");
+        System.out.println("End Sale:\n" + 
+                           "Total cost (incl VAT) " + contr.endSale() + " SEK\n");
+        System.out.println("\nChange to give to the customer: " + contr.getChange(500) + " SEK\n");
+
+        
     }
+
+    
 }
