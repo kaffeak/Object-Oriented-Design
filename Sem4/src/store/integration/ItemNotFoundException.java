@@ -1,16 +1,16 @@
 package store.integration;
 
-public class ItemNotFoundExeption extends Exception {
+public class ItemNotFoundException extends Exception {
     int itemID;
 
-    public ItemNotFoundExeption(int itemID){
+    public ItemNotFoundException(int itemID){
         super("This item does not exist. ID:" + itemID);
         this.itemID = itemID;
     }
 
 
 
-    public ItemNotFoundExeption(String msg){
+    public ItemNotFoundException(String msg){
         super(msg);
     }
 }

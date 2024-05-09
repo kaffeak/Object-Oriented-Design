@@ -41,7 +41,7 @@ public class Controller {
      * @return The <code>AddToSaleInfo</code> containing information about 
      *         the last added item and the running total for the sale.
      */
-    public AddToSaleInfo addItem(int itemID, int quantity) throws ItemNotFoundExeption,DatabaseFailureException{
+    public AddToSaleInfo addItem(int itemID, int quantity) throws ItemNotFoundException,DatabaseFailureException{
         return sale.addToSale(inventorySystem.getItem(itemID), quantity);
     }
 

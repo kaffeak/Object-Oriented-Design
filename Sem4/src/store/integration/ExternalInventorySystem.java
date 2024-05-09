@@ -41,7 +41,7 @@ public class ExternalInventorySystem {
     /**
      * Updates the inventory status based on an {@link ItemDTO} list. 
      * 
-     * @param item The <code>ItemDTO</code> list that will update the inventory with.
+     * @param items The <code>ItemDTO</code> list that will update the inventory with.
      */
     public void updateInventory(List<ItemDTO> items){
         //get items from External inventory system regarding provided list
@@ -55,12 +55,17 @@ public class ExternalInventorySystem {
     /**
      * Returns an {@link ItemDTO} from the inventory based on an itemID. 
      * 
-     * @param itemID The itemId used to search in the inventory for an <code>ItemDTO</code>.
+     * @param ItemID The itemId used to search in the inventory for an <code>ItemDTO</code>.
      * @return The <code>ItemDTO</code> of the item with the corresponding itemID or null if not found.
      */
-    public ItemDTO getItem(int ItemID){
-        //Extract item information from external inventory system with provided ID
-        //Return THIS item
-        return inventoryItems.get(ItemID);
+    public ItemDTO getItem(int ItemID) throws ItemNotFoundException, DatabaseFailureException {
+        if(ItemID == 1337){
+            throw new DatabaseFailureException("Database can not be reached");
+        }
+        try {
+            return inventoryItems.get(ItemID);
+        } catch (IndexOutOfBoundsException ex){
+            throw new ItemNotFoundException("Item could not be found " + ItemID);
+        }
     }
 }

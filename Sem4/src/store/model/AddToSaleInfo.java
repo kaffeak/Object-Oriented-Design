@@ -1,6 +1,9 @@
 package store.model;
 
+import store.integration.DatabaseFailureException;
 import store.integration.ItemDTO;
+import store.integration.ItemNotFoundException;
+
 /**
  * Represents the information about an item and the 
  * total running price for a sale
@@ -29,7 +32,7 @@ public class AddToSaleInfo {
      * 
      * @return The <code>ItemDTO</code> in the object.
      */
-    public ItemDTO getItem() {
+    public ItemDTO getItem() throws DatabaseFailureException, ItemNotFoundException {
         return item;
     }
 

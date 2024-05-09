@@ -18,5 +18,6 @@ public class Main {
         ReceiptPrinter printer = new ReceiptPrinter();
         Controller contr = new Controller(accountingSystem, inventorySystem, printer, discounts);
         View view = new View(contr);
+        view.testrun();
     }
 }
