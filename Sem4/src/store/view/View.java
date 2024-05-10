@@ -4,20 +4,25 @@ import store.model.AddToSaleInfo;
 import store.controller.Controller;
 import store.integration.DatabaseFailureException;
 import store.integration.ItemNotFoundException;
+import store.Utils.FileLogger;
 
  /**
  * Represents the store systems View part
  */
 public class View {
     Controller contr;
+    FileLogger logger;
     /**
      * Creates a new instance of view.
      * 
      * @param controller The instance of controller being used by
      *              the newly created instance.
+     * @param loggr The instance of logger being used by
+     *              the newly created instance.
      */
-    public View(Controller controller) {
+    public View(Controller controller, FileLogger loggr) {
         contr = controller;
+        logger = loggr;
     }
 
      /**
@@ -30,16 +35,16 @@ public class View {
          AddToSaleInfo temp = null;
          contr.startSale();
          try {
-             temp = contr.addItem(1337, 10);
+             temp = contr.addItem(0, 10);
 
              System.out.println("Add 10 items with item id 0:\n" +
-                 "Item ID: " + temp.getItem().getItemID() +
-                 "\nItem name: " + temp.getItem().getName() +
-                 "\nItem cost: " + (temp.getItem().getPrice() * (1+(temp.getItem().getVAT()/100))) + " SEK\n" +
-                 "VAT: " + temp.getItem().getVAT() + "%\n" +
-                 "Item description: " + temp.getItem().getItemDescription() +
-                 "\n\nTotal cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
-                 "Total VAT: " + temp.getTotalVAT() + " SEK\n");
+                     "Item ID: " + temp.getItem().getItemID() +
+                     "\nItem name: " + temp.getItem().getName() +
+                     "\nItem cost: " + (temp.getItem().getPrice() * (1+(temp.getItem().getVAT()/100))) + " SEK\n" +
+                     "VAT: " + temp.getItem().getVAT() + "%\n" +
+                     "Item description: " + temp.getItem().getItemDescription() +
+                     "\n\nTotal cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
+                     "Total VAT: " + temp.getTotalVAT() + " SEK\n");
 
              temp = contr.addItem(3, 3);
 
@@ -85,7 +90,7 @@ public class View {
                  "\n\nTotal cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
                  "Total VAT: " + temp.getTotalVAT() + " SEK\n");
          } catch (ItemNotFoundException ex){
-             //log exception and print information
+             logger.log(ex);
              System.out.println(ex);
              System.exit(1);
          }

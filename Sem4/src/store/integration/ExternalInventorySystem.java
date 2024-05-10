@@ -65,7 +65,7 @@ public class ExternalInventorySystem {
         try {
             return inventoryItems.get(ItemID);
         } catch (IndexOutOfBoundsException ex){
-            throw new ItemNotFoundException("Item could not be found " + ItemID);
+            throw new ItemNotFoundException("Item could not be found, ID: " + ItemID);
         }
     }
 }

@@ -22,7 +22,7 @@ public class ReceiptPrinter {
      * Prints out a receipt based on the {@link Sale} to the sale. 
      * 
      * @param sale The <code>Sale</code> that should be printed.
-     * @param amount The amount paid by the customer.
+     * @param amountPaid The amount paid by the customer.
      * @param change The amount of change the customer got back.
      */
     public void printReceipt(Sale sale, int amountPaid, float change){
