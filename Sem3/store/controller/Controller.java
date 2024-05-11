@@ -51,6 +51,7 @@ public class Controller {
      * @return The running total for the sale.
      */
     public float endSale(){
+		System.out.println(sale.getItems().size());
         return sale.getRunningTotal();
     }
 

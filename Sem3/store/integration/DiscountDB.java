@@ -1,6 +1,7 @@
 package store.integration;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.Map.Entry;
 import java.util.Random;
 
 import store.model.Sale;
@@ -37,11 +38,11 @@ public class DiscountDB {
         return 0.5f;//new Random(customerID).nextFloat(0.5f); 
     }
     //This function would return a discount based on specific items
-    private float itemDiscount(ArrayList<ItemDTO> items){
+    private float itemDiscount(List<Entry<ItemDTO,Integer>> items){
         float totalItemsPrice = 0;
-        for (ItemDTO item : items){
-            if (isItemDiscounted(item)) 
-                totalItemsPrice += (item.getPrice()); //* new Random().nextFloat(0.5f)) * (item.getVAT()+1);
+        for (Entry<ItemDTO,Integer> item : items){
+            if (isItemDiscounted(item.getKey())) 
+                totalItemsPrice += (item.getKey().getPrice()); //* new Random().nextFloat(0.5f)) * (item.getVAT()+1);
         }
         return 0.5f;//totalItemsPrice; 
     }

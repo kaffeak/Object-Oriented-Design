@@ -7,6 +7,8 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.Map.Entry;
+
 import java.util.List;
 
 /**
@@ -43,13 +45,12 @@ public class ExternalInventorySystem {
      * 
      * @param item The <code>ItemDTO</code> list that will update the inventory with.
      */
-    public void updateInventory(List<ItemDTO> items){
+    public void updateInventory(List<Entry<ItemDTO,Integer>> items){
         //get items from External inventory system regarding provided list
         //count quantity of each item in provided list
         //push changes to External inventory system
-        Set<ItemDTO> st = new HashSet<ItemDTO>(items);
-        for (ItemDTO s : st)
-            System.out.println("Told external inventory system to decrease inventory quantity of item " + s.getItemID() + " by " + Collections.frequency(items, s) + " units");
+        for (Entry<ItemDTO,Integer> entry : items)
+            System.out.println("Told external inventory system to decrease inventory quantity of item " + entry.getKey().getItemID() + " by " + entry.getValue() + " units");
     }
 
     /**

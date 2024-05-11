@@ -3,6 +3,7 @@ package store.integration;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import store.model.Sale;
@@ -30,11 +31,10 @@ public class ReceiptPrinter {
         sb.append("\n--------------Begin receipt--------------" + "\n");
         sb.append("Time of sale:" + sale.getTimestamp() + "\n\n");
 
-        List<ItemDTO> items = sale.getItems();
-        Set<ItemDTO> st = new HashSet<ItemDTO>(items);
-        for (ItemDTO s : st)
-            sb.append(s.getName() + "\t\t" + Collections.frequency(items, s) + " x " + ((1+(s.getVAT()/100)) * s.getPrice()) + "\t" + (Collections.frequency(items, s)*(((1+(s.getVAT()/100)) * s.getPrice()))) + " SEK\n");
-        
+        List<Entry<ItemDTO,Integer>> items = sale.getItems();
+		for (Entry<ItemDTO,Integer> entry : items) {
+			sb.append(entry.getKey().getName() + "\t\t" + entry.getValue() + " x " + ((1+(entry.getKey().getVAT()/100)) * entry.getKey().getPrice()) + "\t" + (entry.getValue()*(((1+(entry.getKey().getVAT()/100)) * entry.getKey().getPrice()))) + " SEK\n");
+		}
         sb.append("Total:\t\t\t\t" + sale.getRunningTotal() + " SEK\n");
         sb.append("VAT: " + sale.getTotalVAT());
         sb.append("\n\nCash:\t\t\t\t" + amountPaid + " SEK\n");
