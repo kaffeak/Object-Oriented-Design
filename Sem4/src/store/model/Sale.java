@@ -2,8 +2,10 @@ package store.model;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.List;
 
 import store.integration.ItemDTO;
+import store.Utils.TotalRevenueObserver;
 
 
 /**
@@ -14,6 +16,7 @@ public class Sale {
     private float runningTotal;
     private float totalVAT;
     private ArrayList<ItemDTO> items;
+	private List<TotalRevenueObserver> saleObservers = new ArrayList<>();
 
     /**
      * Creates a new instance of Sale.
@@ -75,6 +78,22 @@ public class Sale {
         return runningTotal;
     }
 
+	/*
+	 * Ends the sale and returns the running total for the sale.
+	 * 
+	 * @return The running total for the sale
+	 */
+	public float endSale(){
+		notifyObservers();
+		return getRunningTotal();
+	}
+
+	private void notifyObservers(){
+		for (TotalRevenueObserver obs : saleObservers) {
+			obs.printTotRev(runningTotal);
+		}
+	}
+
     /**
      * Returns the total VAT for the sale.
      * 
@@ -91,4 +110,13 @@ public class Sale {
     public void setRunningTotal(float newRunningTotal) {
         this.runningTotal = newRunningTotal;
     }
+
+	/*
+	 * Adds a list of observers to the sale.
+	 * 
+	 * @param The list of observers that should be added to the sale.
+	 */
+	public void addObservers(List<TotalRevenueObserver> observers){
+		saleObservers.addAll(observers);
+	}
 }

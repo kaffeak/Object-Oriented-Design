@@ -1,5 +1,9 @@
 package store.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import store.Utils.TotalRevenueObserver;
 import store.integration.*;
 import store.model.*;
 
@@ -9,6 +13,7 @@ public class Controller {
     private ReceiptPrinter printer;
     private DiscountDB discount;
     private Sale sale;
+	List<TotalRevenueObserver> saleObservers = new ArrayList<>();
     
     /**
      * Creates a new instance of Controller, representing an the controller in the store system.
@@ -30,6 +35,7 @@ public class Controller {
      */
     public void startSale(){
         this.sale = new Sale();
+		this.sale.addObservers(saleObservers);
     }
 
     /**
@@ -51,7 +57,7 @@ public class Controller {
      * @return The running total for the sale.
      */
     public float endSale(){
-        return sale.getRunningTotal();
+        return sale.endSale();
     }
 
     /**
@@ -83,5 +89,14 @@ public class Controller {
         //update registry
         return change;
     }
+
+	/*
+	 * Adds a observer to the observer list for sales.
+	 * 
+	 * @param The list of observers that should be added to the sale observer list.
+	 */
+	public void addSaleObserver(TotalRevenueObserver newObserver){
+		saleObservers.add(newObserver);
+	}
     
 }

@@ -5,6 +5,7 @@ import store.controller.Controller;
 import store.integration.DatabaseFailureException;
 import store.integration.ItemNotFoundException;
 import store.Utils.FileLogger;
+import store.Utils.TotalRevenueFileOutput;
 
  /**
  * Represents the store systems View part
@@ -23,6 +24,10 @@ public class View {
     public View(Controller controller, FileLogger loggr) {
         contr = controller;
         logger = loggr;
+		contr.addSaleObserver(new TotalRevenueFileOutput());
+		contr.addSaleObserver(new TotalRevenueView());
+		
+		
     }
 
      /**
