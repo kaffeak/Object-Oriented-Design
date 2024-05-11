@@ -44,10 +44,12 @@ public class Sale {
 		boolean exists = false;
 		for (Entry<ItemDTO,Integer> entry : items) {
 			if (entry.getKey().getItemID() == item.getItemID()) 
+			{
 				exists = true;
 				System.out.println(entry.getValue());
 				entry.setValue(entry.getValue() + quantity);
 				break;
+			}
 		}     
 			if (!exists) {
 				Entry<ItemDTO,Integer> newItem = new SimpleEntry<>(item, quantity);
