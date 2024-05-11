@@ -25,20 +25,20 @@ public class DiscountDB {
      * @param currentSale The <code>Sale</code> that the discounts will be based on.
      * @return The new running total of the sale.
      */
-    public float getDiscounts(int customerID, Sale currentSale){
-        float totalAfterDiscounts = itemDiscount(currentSale.getItems());
+    public double getDiscounts(int customerID, Sale currentSale){
+        double totalAfterDiscounts = itemDiscount(currentSale.getItems());
         totalAfterDiscounts = totalAfterDiscounts * personalDiscount(customerID);
         totalAfterDiscounts = totalAfterDiscounts * totalPriceDiscount(currentSale.getRunningTotal());
         return totalAfterDiscounts;
     }
 
     //This function would return a discount connected to the specific customer
-    private float personalDiscount(int customerID){
+    private double personalDiscount(int customerID){
         return 0.5f;//new Random(customerID).nextFloat(0.5f); 
     }
     //This function would return a discount based on specific items
-    private float itemDiscount(ArrayList<ItemDTO> items){
-        float totalItemsPrice = 0;
+    private double itemDiscount(ArrayList<ItemDTO> items){
+        double totalItemsPrice = 0;
         for (ItemDTO item : items){
             if (isItemDiscounted(item)) 
                 totalItemsPrice += (item.getPrice()); //* new Random().nextFloat(0.5f)) * (item.getVAT()+1);
@@ -49,7 +49,7 @@ public class DiscountDB {
         return new Random().nextBoolean();
     }
     //This function would return a discount based on the price
-    private float totalPriceDiscount(float runningTotal){
+    private double totalPriceDiscount(double runningTotal){
         return 0.5f;//new Random(Float.floatToIntBits(runningTotal)).nextFloat(0.5f);
     }
 }

@@ -6,9 +6,9 @@ package store.integration;
 public class ItemDTO {
 
     private int itemID;
-    private float VAT;
+    private double VAT;
     private String name;
-    private float price;
+    private double price;
     private String description;
 
     /**
@@ -20,7 +20,7 @@ public class ItemDTO {
      * @param VAT The VAT represented by the newly created instance.
      * @param description The description represented by the newly created instance.
      */
-    public ItemDTO(int itemID, String name, float price, float VAT, String description){
+    public ItemDTO(int itemID, String name, double price, double VAT, String description){
         this.itemID = itemID;
         this.name = name;
         this.price = price;
@@ -60,7 +60,7 @@ public class ItemDTO {
      * 
      * @return Returns the price of the item.
      */
-    public float getPrice(){
+    public double getPrice(){
         return this.price;
     }
 
@@ -69,7 +69,7 @@ public class ItemDTO {
      * 
      * @return Returns the VAT of the item.
      */
-    public float getVAT(){
+    public double getVAT(){
         return this.VAT;
     }
 }

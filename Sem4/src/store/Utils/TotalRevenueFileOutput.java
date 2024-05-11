@@ -25,7 +25,7 @@ public class TotalRevenueFileOutput implements TotalRevenueObserver {
 	 * @param new running total from the ended sale.
 	 */
 	@Override
-	public void printTotRev(float newSale) {
+	public void printTotRev(double newSale) {
 		totalRevenue += newSale;
 		StringBuilder sb = new StringBuilder();
 		sb.append("Total Revenue this far: " + totalRevenue);

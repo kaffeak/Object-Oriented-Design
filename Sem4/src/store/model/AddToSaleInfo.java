@@ -10,8 +10,8 @@ import store.integration.ItemNotFoundException;
  */
 public class AddToSaleInfo {
     private ItemDTO item;
-    private float runningTotal;
-    private float totalVAT;
+    private double runningTotal;
+    private double totalVAT;
 
     /**
      * Creates a new instance of AddToSaleInfo, representing 
@@ -21,7 +21,7 @@ public class AddToSaleInfo {
      * @param runningTotal The running total represented by the newly created instance.
      * @param totalVAT The total VAT representad by the newly created instance.
      */
-    public AddToSaleInfo(ItemDTO item, float runningTotal, float totalVAT){
+    public AddToSaleInfo(ItemDTO item, double runningTotal, double totalVAT){
         this.item = item;
         this.runningTotal = runningTotal;
         this.totalVAT = totalVAT;
@@ -41,7 +41,7 @@ public class AddToSaleInfo {
      * 
      * @return The running total in the object.
      */
-    public float getRunningTotal() {
+    public double getRunningTotal() {
         return runningTotal;
     }
 
@@ -50,7 +50,7 @@ public class AddToSaleInfo {
      * 
      * @return The running total in the object.
      */
-    public float getTotalVAT(){
+    public double getTotalVAT(){
         return totalVAT;
     }
 }

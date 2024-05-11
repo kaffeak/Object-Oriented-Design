@@ -22,13 +22,13 @@ public class ExternalInventorySystem {
      */
     public ExternalInventorySystem() {
         try {
-            File inventory = new File("store/integration/inventoryItems.txt");
+            File inventory = new File("src/store/integration/inventoryItems.txt");
             Scanner scanner = new Scanner(inventory);
             String[] info;
             int i = 0;
             while (scanner.hasNextLine()) {
                 info = scanner.nextLine().split(",");
-                itemDTO = new ItemDTO(Integer.parseInt(info[0]), info[1], Float.parseFloat(info[2]), Float.parseFloat(info[3]), info[4]);
+                itemDTO = new ItemDTO(Integer.parseInt(info[0]), info[1], Double.parseDouble(info[2]), Double.parseDouble(info[3]), info[4]);
                 inventoryItems.add(itemDTO);
             }
             scanner.close();

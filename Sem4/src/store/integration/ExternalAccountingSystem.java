@@ -29,8 +29,8 @@ public class ExternalAccountingSystem {
      * @param runningTotal The running total of the sale.
      * @return The change that the customer shuld get back.
      */
-    public float getChange(int amountPaid, float runningTotal){
+    public double getChange(int amountPaid, double runningTotal){
         System.out.println("Customer pays " + amountPaid + " SEK:");
-        return ((float) amountPaid - runningTotal);
+        return ((double) amountPaid - runningTotal);
     }
 }

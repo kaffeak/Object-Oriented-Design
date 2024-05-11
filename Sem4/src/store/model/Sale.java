@@ -13,8 +13,8 @@ import store.Utils.TotalRevenueObserver;
  */
 public class Sale {
     private Timestamp timestamp;
-    private float runningTotal;
-    private float totalVAT;
+    private double runningTotal;
+    private double totalVAT;
     private ArrayList<ItemDTO> items;
 	private List<TotalRevenueObserver> saleObservers = new ArrayList<>();
 
@@ -74,7 +74,7 @@ public class Sale {
      * 
      * @return The running total for the sale.
      */
-    public float getRunningTotal() {
+    public double getRunningTotal() {
         return runningTotal;
     }
 
@@ -83,7 +83,7 @@ public class Sale {
 	 * 
 	 * @return The running total for the sale
 	 */
-	public float endSale(){
+	public double endSale(){
 		notifyObservers();
 		return getRunningTotal();
 	}
@@ -99,7 +99,7 @@ public class Sale {
      * 
      * @return The total VAT for the sale.
      */
-    public float getTotalVAT(){
+    public double getTotalVAT(){
         return this.totalVAT;
     }
 
@@ -107,7 +107,7 @@ public class Sale {
      * Sets the value for running total
      * 
      */
-    public void setRunningTotal(float newRunningTotal) {
+    public void setRunningTotal(double newRunningTotal) {
         this.runningTotal = newRunningTotal;
     }
 

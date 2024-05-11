@@ -25,7 +25,7 @@ public class ReceiptPrinter {
      * @param amountPaid The amount paid by the customer.
      * @param change The amount of change the customer got back.
      */
-    public void printReceipt(Sale sale, int amountPaid, float change){
+    public void printReceipt(Sale sale, int amountPaid, double change){
         StringBuilder sb = new StringBuilder();
         sb.append("\n--------------Begin receipt--------------" + "\n");
         sb.append("Time of sale:" + sale.getTimestamp() + "\n\n");

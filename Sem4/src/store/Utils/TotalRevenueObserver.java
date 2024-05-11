@@ -6,5 +6,5 @@ public interface TotalRevenueObserver {
 	 * 
 	 * @param Takes the total revenue as an attribute
 	 */
-	void printTotRev(float totalRevenue);
+	void printTotRev(double totalRevenue);
 }

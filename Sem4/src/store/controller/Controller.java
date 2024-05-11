@@ -56,7 +56,7 @@ public class Controller {
      * 
      * @return The running total for the sale.
      */
-    public float endSale(){
+    public double endSale(){
         return sale.endSale();
     }
 
@@ -66,8 +66,8 @@ public class Controller {
      * @param customerID The customer id that will be used to check for discounts.
      * @return The new running total for the sale.
      */
-    public float retrieveDiscount(int customerID){
-        float newRunningTotal = discount.getDiscounts(customerID, sale);
+    public double retrieveDiscount(int customerID){
+        double newRunningTotal = discount.getDiscounts(customerID, sale);
         sale.setRunningTotal(newRunningTotal);
         return newRunningTotal;
     }
@@ -81,8 +81,8 @@ public class Controller {
      * @param amountPaid The amount paid by the customer.
      * @return The amount that the customer should get back.
      */
-    public float getChange(int amountPaid){
-        float change = accountingSystem.getChange(amountPaid, sale.getRunningTotal());
+    public double getChange(int amountPaid){
+        double change = accountingSystem.getChange(amountPaid, sale.getRunningTotal());
         accountingSystem.sendToAccounting(sale);
         inventorySystem.updateInventory(sale.getItems());
         printer.printReceipt(sale, amountPaid, change);

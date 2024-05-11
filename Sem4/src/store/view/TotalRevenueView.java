@@ -3,7 +3,7 @@ package store.view;
 import store.Utils.TotalRevenueObserver;
 
 public class TotalRevenueView implements TotalRevenueObserver {
-	private float totalRevenue = 0;
+	private double totalRevenue = 0;
 	public TotalRevenueView(){
 	}
 
@@ -13,7 +13,7 @@ public class TotalRevenueView implements TotalRevenueObserver {
 	 * @param new running total from the ended sale.
 	 */
 	@Override
-	public void printTotRev(float newSale) {
+	public void printTotRev(double newSale) {
 		totalRevenue += newSale;
 		System.out.println("Total Revenue this far: " + totalRevenue);
 	}
