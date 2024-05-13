@@ -28,6 +28,8 @@ class ItemNotFoundExceptionTest {
             ex.getItem(invalidItemID);
         } catch (ItemNotFoundException ex){
             actual = ex.getMessage();
+        } catch (DatabaseFailureException e){
+            e.printStackTrace();
         }
         assertEquals("Item could not be found, ID: " + invalidItemID, actual);
     }

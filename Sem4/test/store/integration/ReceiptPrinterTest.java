@@ -49,6 +49,8 @@ class ReceiptPrinterTest {
         }catch (ItemNotFoundException ex){
             ex.printStackTrace();
             fail("Item could not be added to sale");
+        } catch (DatabaseFailureException e){
+            e.printStackTrace();
         }
 
         String totalcost = Double.toString(controller.endSale());

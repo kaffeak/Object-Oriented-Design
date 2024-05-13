@@ -37,7 +37,7 @@ class ControllerTest {
         }
         try {
             controller.addItem(validItemID, 1);
-        }catch (ItemNotFoundException ex){
+        }catch (ItemNotFoundException | DatabaseFailureException ex){
             ex.printStackTrace();
             fail("Item could not be added to sale");
         }
@@ -60,7 +60,7 @@ class ControllerTest {
         controller.startSale();
         try {
             controller.addItem(validItemID, 1);
-        }catch (ItemNotFoundException ex){
+        }catch (ItemNotFoundException | DatabaseFailureException ex){
             ex.printStackTrace();
             fail("Item could not be added to sale");
         }
@@ -85,7 +85,7 @@ class ControllerTest {
         controller.startSale();
         try {
             controller.addItem(validItemID, 10);
-        }catch (ItemNotFoundException ex){
+        }catch (ItemNotFoundException | DatabaseFailureException ex){
             ex.printStackTrace();
             fail("Item could not be added to sale");
         }

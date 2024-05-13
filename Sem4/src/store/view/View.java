@@ -94,7 +94,7 @@ public class View {
                  "Item description: " + temp.getItem().getItemDescription() +
                  "\n\nTotal cost (incl VAT): " + temp.getRunningTotal() + " SEK\n" +
                  "Total VAT: " + temp.getTotalVAT() + " SEK\n");
-         } catch (ItemNotFoundException ex){
+         } catch (ItemNotFoundException | DatabaseFailureException ex){
              logger.log(ex);
              System.out.println(ex);
              System.exit(1);
